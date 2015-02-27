@@ -29,24 +29,58 @@ function create_grid (){
 
 // COLOR PICKER GRID
 function create_colorPicker (){
-  var row = 10;
-  var column = 3;
+  var rows = 10;
+  var columns = 3;
   var $row = $("<div>", {
     class : 'row'
   });
   var $square = $("<div>",{
     class: 'picker_square'
   });
-  for(var j = 0; j < row; j++){
-    for(var i = 0; i < column; i++){
-      $square.css("background-color", "rgb("+i*j*30+","+i*j*30+","+i*j*30+")");
-      $row.append($square.clone());
+  for(var j = 0; j < rows; j++){
+    var row = $row.clone();
+    for(var i = 0; i < columns; i++){
+      var index = i*(j+1)-1;
+      $square.css("background-color" : colors[index]);
+      row.append($square.clone());
     }
 
-    $("#controls").append($row.clone());
+    $("#controls").append(row);
   }
 }
-
+var colors = [
+  "#FFFFFF",
+  "#FFFFCC",
+  "#A369AF",
+  "#E52325",
+  "#FD8E2F",
+  "#2EB7ED",
+  "#6CCCF2",
+  "#FFDFE5",
+  "#91E374",
+  "#B1EB9C",
+  "#AE323B",
+  "#032149",
+  "#1C375B",
+  "#91E374",
+  "#BAB3B2",
+  "#6F8197",
+  "#FBDB65",
+  "#000033",
+  "#303030",
+  "#E0E0E0",
+  "#484848",
+  "#A00000",
+  "#CCFF00",
+  "#FF0099",
+  "#FF6600",
+  "#FF9966",
+  "#CC66CC",
+  "#CC0033",
+  "#9999CC",
+  "#999999",    
+  // 30 times
+];
 
 // COLOR PICKER
 // $(".highlights .columns .highlight").click(function () {

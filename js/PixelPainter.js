@@ -3,14 +3,19 @@ $(function(){
   create_grid();
   create_colorPicker();
 
-  $('.square').click(function(){
-    $(this).addClass("square_color");
+  $("#controls").on("click", ".picker_square", function(){
+    console.log($(this).css("background-color"));
   });
 
-  $(".picker_square").click(function(){
-  var colorPicked = $(this).css("background-color");
-  console.log(colorPicked);
-  });
+
+  // $('.square').click(function(){
+  //   $(this).addClass("square_color");
+  // });
+
+  // $(".picker_square").click(function(){
+  // var colorPicked = $(this).css("background-color");
+  // console.log(colorPicked);
+  // });
 });
 
 //PIXEL GRID

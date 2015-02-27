@@ -1,6 +1,5 @@
 #controls{
-  width: 100px;
-  height: 100px;
+  width: 30px;
   border: solid 1px #000;
   float: left;
 }
@@ -19,6 +18,16 @@
 }
 
 .square{
+  width: 10px;
+  height: 10px;
+  margin: 0px;
+  outline: 1px solid;
+  display: inline-block;
+  float: left;
+  background: #FFFFFF;
+}
+
+.picker_square{
   width: 10px;
   height: 10px;
   margin: 0px;

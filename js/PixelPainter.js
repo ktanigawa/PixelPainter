@@ -4,22 +4,20 @@ $(function(){
   create_colorPicker();
 
   $('.square').click(function(){
-    console.log("square color");
     $(this).addClass("square_color");
   });
 });
 
-
 //PIXEL GRID
 function create_grid (){
-var row = 20;
-var column = 20;
-var $row = $("<div>", {
-  class : 'row'
-});
-var $square = $("<div>",{
-  class: 'square'
-});
+  var row = 20;
+  var column = 20;
+  var $row = $("<div>", {
+    class : 'row'
+  });
+  var $square = $("<div>",{
+    class: 'square'
+  });
   for(var i = 0; i < column; i++){
     $row.append($square.clone());
   }
@@ -29,25 +27,27 @@ var $square = $("<div>",{
   }
 }
 
-
 // COLOR PICKER GRID
 function create_colorPicker (){
-var row = 20;
-var column = 10;
-var $row = $("<div>", {
-  class : 'row'
-});
-var $square = $("<div>",{
-  class: 'square'
-});
-  for(var i = 0; i < column; i++){
-    $row.append($square.clone());
-  }
-
+  var row = 10;
+  var column = 3;
+  var $row = $("<div>", {
+    class : 'row'
+  });
+  var $square = $("<div>",{
+    class: 'picker_square'
+  });
   for(var j = 0; j < row; j++){
+    for(var i = 0; i < column; i++){
+      $square.css("background-color", "rgb("+i*j*30+","+i*j*30+","+i*j*30+")");
+      $row.append($square.clone());
+    }
+
     $("#controls").append($row.clone());
   }
 }
+
+
 // COLOR PICKER
 // $(".highlights .columns .highlight").click(function () {
 //   // console.log('hello', $(this));

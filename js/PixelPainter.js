@@ -1,11 +1,18 @@
 $(function(){
-  console.log("hello");
   create_grid();
   create_colorPicker();
 
   $("#controls").on("click", ".picker_square", function(){
-    console.log($(this).css("background-color"));
+    var colorPicked = $(this).css("background-color");
+    console.log(colorPicked);
+  
+  $("#artboard").on("click", ".square", function(){
+    $(this).css("background-color", colorPicked);
+    
   });
+
+  });
+
 
 
   // $('.square').click(function(){
@@ -94,10 +101,10 @@ var colors = [
 ];
 
 // COLOR PICKER FUNCTION
-$("picker_square").click(function(){
-  var colorPicked = $(this).css("background-color");
-  console.log(colorPicked);
-});
+// $("picker_square").click(function(){
+//   var colorPicked = $(this).css("background-color");
+//   console.log(colorPicked);
+// });
   // $(this).css({
     // "background-color" : "rgb("+ random_r +","+ random_g +","+ random_b +")"
   // });

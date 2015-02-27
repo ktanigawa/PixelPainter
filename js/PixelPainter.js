@@ -39,9 +39,10 @@ function create_colorPicker (){
   });
   for(var j = 0; j < rows; j++){
     var row = $row.clone();
-    for(var i = 0; i < columns; i++){
-      var index = i*(j+1)-1;
-      $square.css("background-color" : colors[index]);
+    for(var i = 1; i < columns+1; i++){
+      var index = i*(j+1);
+      console.log(index);
+      $square.css({"background-color" : colors[index]});
       row.append($square.clone());
     }
 

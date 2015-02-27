@@ -5,8 +5,8 @@
 }
 
 #artboard{
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border: solid 1px #000;
   margin-left: auto;
   margin-right: auto;
@@ -14,12 +14,12 @@
 
 .row{
   width: 1000px;
-  height: 10px;
+  height: 20px;
 }
 
 .square{
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   margin: 0px;
   outline: 1px solid;
   display: inline-block;
@@ -28,8 +28,8 @@
 }
 
 .picker_square{
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   margin: 0px;
   outline: 1px solid;
   display: inline-block;

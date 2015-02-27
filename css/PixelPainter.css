@@ -1,15 +1,16 @@
 #controls{
   width: 30px;
-  border: solid 1px #000;
-  float: left;
+  border: solid 1px #D3D3D3;
+  position: relative;
 }
 
 #artboard{
   width: 200px;
   height: 200px;
-  border: solid 1px #000;
-  margin-left: auto;
-  margin-right: auto;
+  border: solid 1px #D3D3D3;
+  position: absolute;
+  top: 10px;
+  left: 300px;
 }
 
 .row{
@@ -21,9 +22,8 @@
   width: 20px;
   height: 20px;
   margin: 0px;
-  outline: 1px solid;
+  outline: 1px solid #a19c9c;
   display: inline-block;
-  float: left;
   background: #FFFFFF;
 }
 
@@ -31,8 +31,13 @@
   width: 20px;
   height: 20px;
   margin: 0px;
-  outline: 1px solid;
+  outline: 1px solid #D3D3D3;
   display: inline-block;
-  float: left;
   background: #FFFFFF;
+}
+
+.button_clear{
+  background-color: #D3D3D3;
+  height: 20px;
+  width: 60px;
 }

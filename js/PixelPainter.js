@@ -1,28 +1,15 @@
 $(function(){
   create_grid();
   create_colorPicker();
-
+  clear_button();
   $("#controls").on("click", ".picker_square", function(){
     var colorPicked = $(this).css("background-color");
     console.log(colorPicked);
   
-  $("#artboard").on("click", ".square", function(){
-    $(this).css("background-color", colorPicked);
-    
+    $("#artboard").on("click", ".square", function(){
+      $(this).css("background-color", colorPicked);      
+    });
   });
-
-  });
-
-
-
-  // $('.square').click(function(){
-  //   $(this).addClass("square_color");
-  // });
-
-  // $(".picker_square").click(function(){
-  // var colorPicked = $(this).css("background-color");
-  // console.log(colorPicked);
-  // });
 });
 
 //PIXEL GRID
@@ -99,6 +86,23 @@ var colors = [
   "#999999",    
   // 30 times
 ];
+
+//ADD BUTTON TO CLEAR 
+function clear_button() {
+  // DOM element creating objects
+  var button_clear = $("<button>", {
+    //These are setting properties and events with JSON Object shortcut
+    "class" : "button_clear",
+    "text" : "reset",
+    "hover" : "hover",
+    "click" : function (){
+      $(".square").css("background-color", "#FFFFFF");
+      console.log("clicked");
+    }
+  });
+  // button_clear.wrap("<div>");
+  button_clear.insertAfter("#controls");
+}
 
 // COLOR PICKER FUNCTION
 // $("picker_square").click(function(){

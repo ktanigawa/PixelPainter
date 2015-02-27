@@ -29,33 +29,16 @@ function create_grid (){
 
 
 // COLOR PICKER
-var color = "#f00";
+$(".highlights .columns .highlight").click(function () {
+  // console.log('hello', $(this));
+  // random number between 0x000000 and 0xFFFFFF
+  var random_r = Math.floor( Math.random()*256);
+  var random_g = Math.floor( Math.random()*256);
+  var random_b = Math.floor( Math.random()*256);
 
-$("#colorpicker").spectrum({ //spectrum config
-    color: "#f00",
-    showPalette: true,
-    showInput: true,
-    showAlpha: true,
-    chooseText: "Pick",
-    cancelText: "X",
-    togglePaletteOnly: true,
-    showPaletteOnly: true,
-    togglePaletteMoreText: "More Colors...",
-    togglePaletteLessText: "Less Colors...",
-    palette: [
-            //color palettes for Spectrum
-    ],
-    change: function(colorSelected) {
-        color = colorSelected.toHexString();
-    }
-});
-
-$('.pixel').click(function(){
-
-    $(this).css('background-color' , color);
-
-});
-  
+  $(this).css({
+    "background" : "rgb("+ random_r +","+ random_g +","+ random_b +")"
+  });
 
 // function PixelPainter (width, height){
 //   this.artboard = $

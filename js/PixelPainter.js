@@ -1,19 +1,39 @@
 $(function(){
-  create_grid();
-  create_colorPicker();
-
-  $("#controls").on("click", ".picker_square", function(){
-    var colorPicked = $(this).css("background-color");
-    console.log(colorPicked);
   
-  $("#artboard").on("click", ".square", function(){
-    $(this).css("background-color", colorPicked);
-    
+  create_grid(20,20);
+  create_colorPicker();
+  paintCell();
+  eraseButton();
+
+// CONTROLS
+  //pick color and paint cell
+  var colorPicked = null;
+  $("#controls").on("click", ".picker_square", function(){
+    colorPicked = $(this).css("background-color");
+    console.log(colorPicked);
   });
 
-  });
+  function paintCell(){
+    $("#artboard").on("click", ".square", function(){
+      $(this).css("background-color", colorPicked);
+      console.log(colorPicked);
+    });
+  }
 
-
+  function eraseButton(){
+    var erase_button = $("<button>", { 
+      "class" : "erase_button",
+      "text" : "erase",
+      click : function(){
+        colorPicked = "rgb(255, 255, 255)";
+        $("#artboard").on("click", ".square", function(){
+        $(this).css("background-color", colorPicked);
+        console.log("erase");
+    });
+      }
+    });
+    $(erase_button).insertAfter("#controls");
+  }
 
   // $('.square').click(function(){
   //   $(this).addClass("square_color");
@@ -26,9 +46,9 @@ $(function(){
 });
 
 //PIXEL GRID
-function create_grid (){
-  var row = 20;
-  var column = 20;
+function create_grid (width,height){
+  var row = width;
+  var column = height;
   var $row = $("<div>", {
     class : 'row'
   });
@@ -42,7 +62,9 @@ function create_grid (){
   for(var j = 0; j < row; j++){
     $("#artboard").append($row.clone());
   }
+
 }
+
 
 // COLOR PICKER GRID
 function create_colorPicker (){
@@ -66,6 +88,7 @@ function create_colorPicker (){
     $("#controls").append(row);
   }
 }
+
 var colors = [
   "#FFFFFF",
   "#FFFFCC",

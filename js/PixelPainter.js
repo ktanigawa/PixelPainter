@@ -6,6 +6,11 @@ $(function(){
   $('.square').click(function(){
     $(this).addClass("square_color");
   });
+
+  $(".picker_square").click(function(){
+  var colorPicked = $(this).css("background-color");
+  console.log(colorPicked);
+  });
 });
 
 //PIXEL GRID
@@ -37,12 +42,12 @@ function create_colorPicker (){
   var $square = $("<div>",{
     class: 'picker_square'
   });
-  for(var j = 0; j < rows; j++){
+  var index = 0;
+  for(var j = 1; j < rows+1; j++){
     var row = $row.clone();
     for(var i = 1; i < columns+1; i++){
-      var index = i*(j+1);
       console.log(index);
-      $square.css({"background-color" : colors[index]});
+      $square.css({"background-color" : colors[index++]});
       row.append($square.clone());
     }
 
@@ -83,17 +88,15 @@ var colors = [
   // 30 times
 ];
 
-// COLOR PICKER
-// $(".highlights .columns .highlight").click(function () {
-//   // console.log('hello', $(this));
-//   // random number between 0x000000 and 0xFFFFFF
-//   var random_r = Math.floor( Math.random()*256);
-//   var random_g = Math.floor( Math.random()*256);
-//   var random_b = Math.floor( Math.random()*256);
+// COLOR PICKER FUNCTION
+$("picker_square").click(function(){
+  var colorPicked = $(this).css("background-color");
+  console.log(colorPicked);
+});
+  // $(this).css({
+    // "background-color" : "rgb("+ random_r +","+ random_g +","+ random_b +")"
+  // });
 
-//   $(this).css({
-//     "background" : "rgb("+ random_r +","+ random_g +","+ random_b +")"
-//   });
 
 // function PixelPainter (width, height){
 //   this.artboard = $

@@ -1,7 +1,12 @@
 #controls{
   width: 30px;
+<<<<<<< HEAD
   border: solid 1px #D3D3D3;
   position: relative;
+=======
+  border: solid 1px #000;
+
+>>>>>>> a47bcc05b85dbb07f3858909d00ec3e30e7cd8b3
 }
 
 #artboard{

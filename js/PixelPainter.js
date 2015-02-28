@@ -4,6 +4,7 @@ $(function(){
   create_colorPicker();
   paintCell();
   eraseButton();
+  clear_button();
 
 // CONTROLS
   //pick color and paint cell
